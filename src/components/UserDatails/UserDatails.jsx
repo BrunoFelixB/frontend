@@ -9,7 +9,7 @@ const UserDatails = () => {
   const [loading, setLoading] = useState(false)
   const toast = useToast()
 
-  const BASE_URL = 'http://localhost:3000/api/users';
+  const BASE_URL = 'https://api.github.com/users';
 
   const isMobile = useBreakpointValue({
     base: true,
@@ -26,7 +26,7 @@ const UserDatails = () => {
 
       try {
 
-        const firstResp = await axios.get(`${BASE_URL}/${username}/details`);
+        const firstResp = await axios.get(`${BASE_URL}/${username}`);
 
         const secondResp = await axios.get(`${BASE_URL}/${username}/repos`);
 
