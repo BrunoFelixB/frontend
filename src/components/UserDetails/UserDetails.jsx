@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Box, Flex, Button, useBreakpointValue, Spinner, Image, Card, CardHeader, CardBody, CardFooter, Stack, Heading, Text, FormControl, FormLabel, Input, Table, Thead, Tr, Th, Tbody, Td, useToast } from "@chakra-ui/react";
 import axios from "axios";
 
-const UserDatails = () => {
+const UserDetails = () => {
   const [user, setUser] = useState([]);
   const [repo, setRepo] = useState([]);
   const [username, setUsername] = useState("");
@@ -196,4 +196,4 @@ const UserDatails = () => {
   );
 };
 
-export default UserDatails;
+export default UserDetails;
