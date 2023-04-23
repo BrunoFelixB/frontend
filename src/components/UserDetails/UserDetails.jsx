@@ -101,7 +101,7 @@ const UserDetails = () => {
                 />
               </FormControl>
 
-              {loading ? <Spinner /> : <Button type="submit" onClick={handleSubmit} colorScheme="blue" mt={4}>
+              {loading ? <Spinner /> : <Button type="submit" onClick={handleSubmit} isDisabled={username === ""} colorScheme="blue" mt={4}>
                 Search <Search2Icon marginLeft="5px"/>
               </Button>}
 

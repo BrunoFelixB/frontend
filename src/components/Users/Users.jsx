@@ -17,7 +17,7 @@ const Users = () => {
     base: true,
     lg: false,
   });
-  
+
 
   const handleSubmit = async (e) => {
 
@@ -27,9 +27,9 @@ const Users = () => {
     if (since !== '') {
       try {
 
-         const res = await axios.get(`${BASE_URL}?since=${since}&page=${currentPage}`);
+        const res = await axios.get(`${BASE_URL}?since=${since}&page=${currentPage}`);
 
-         setUser(res.data);
+        setUser(res.data);
 
         toast({
           title: "Search successfully completed!",
@@ -97,8 +97,8 @@ const Users = () => {
                 />
               </FormControl>
 
-              {loading ? <Spinner /> : <Button type="submit" onClick={handleSubmit} colorScheme="blue" mt={4} disabled={since == ""}>
-                Search <Search2Icon marginLeft="5px"/>
+              {loading ? <Spinner /> : <Button type="submit" onClick={handleSubmit} colorScheme="blue" mt={4} isDisabled={since === ""}>
+                Search <Search2Icon marginLeft="5px" />
               </Button>}
 
             </Box>
@@ -110,15 +110,16 @@ const Users = () => {
 
             <Box maxW={1000} w="100%" px={2}>
 
-              <Button textAlign="center"
+              <Button
+                textAlign="center"
                 cursor="pointer"
                 margin="5px"
                 colorScheme="blue"
                 onClick={() => handlePageChange(currentPage - 1)}
-                disabled={currentPage === 1}>
+                isDisabled={currentPage === 1}
+              >
                 <ArrowBackIcon></ArrowBackIcon>
               </Button>
-
               <Button margin="5px" colorScheme="blue">
                 Page {currentPage}
               </Button>
