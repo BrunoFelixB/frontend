@@ -18,15 +18,15 @@ export function Header(props) {
                             </div>
                         </Link>
 
-                        <Link className='link' to="/users">
+                        <Link className='link' to="/userlist">
                             <div className={props.number == 2 ? 'nav_item_active' : 'nav_item_2'}>
-                                <h1>Users</h1>
+                                <h1>User list</h1>
                             </div>
                         </Link>
 
-                        <Link className='link' to="/details">
+                        <Link className='link' to="/finduser">
                             <div className={props.number == 5 ? 'nav_item_active' : 'nav_item_3'}>
-                                <h1>Details</h1>
+                                <h1>Find a user</h1>
                             </div>
                         </Link>
 

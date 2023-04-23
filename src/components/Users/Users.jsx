@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { ArrowBackIcon, ArrowForwardIcon, } from "@chakra-ui/icons";
+import { ArrowBackIcon, ArrowForwardIcon, Search2Icon } from "@chakra-ui/icons";
 import { Box, Flex, Button, Table, Thead, Tr, Th, Tbody, Td, useBreakpointValue, Spinner, FormControl, FormLabel, Input, useToast } from "@chakra-ui/react";
 import axios from "axios";
+
 
 const Users = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -16,6 +17,7 @@ const Users = () => {
     base: true,
     lg: false,
   });
+  
 
   const handleSubmit = async (e) => {
 
@@ -25,9 +27,9 @@ const Users = () => {
     if (since !== '') {
       try {
 
-        const res = await axios.get(`${BASE_URL}?since=${since}&page=${currentPage}`);
+         const res = await axios.get(`${BASE_URL}?since=${since}&page=${currentPage}`);
 
-        setUser(res.data);
+         setUser(res.data);
 
         toast({
           title: "Search successfully completed!",
@@ -82,7 +84,7 @@ const Users = () => {
       <Box maxW={1000} w="100%" h="90vh" py={10} px={2}>
         <Box maxW={1000} w="100%" h="90vh" py={10} px={2}>
 
-          <Box maxW={1000} w="20%" px={2}>
+          <Box maxW={1000} w={isMobile ? "50%" : "30%"} px={2}>
 
             <Box as="form" my={4}>
               <FormControl id="since">
@@ -96,7 +98,7 @@ const Users = () => {
               </FormControl>
 
               {loading ? <Spinner /> : <Button type="submit" onClick={handleSubmit} colorScheme="blue" mt={4} disabled={since == ""}>
-                Search
+                Search <Search2Icon marginLeft="5px"/>
               </Button>}
 
             </Box>

@@ -18,7 +18,7 @@ const AppRoutes = () => {
                         }
                     />
                     <Route
-                        path="/users"
+                        path="/userlist"
                         element={
 
                             <UsersPage />
@@ -26,7 +26,7 @@ const AppRoutes = () => {
                         }
                     />
                     <Route
-                        path="/details"
+                        path="/finduser"
                         element={
 
                             <DetailsPage/>

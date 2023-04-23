@@ -2,9 +2,9 @@
 
 This project was created as a result of the test, it is possible to search the Git Hug API.
 
-On the `users` screen you can search for users
+On the `User List` screen you can search for users, will return a larger list of users with id greater than the value entered in the `since` field.
 
-On the `details` screen you can search for users by username where you can also see the user repositories
+On the `Find a User` screen, you can search for users by username and find more detailed information about the user and their repositories.
 
 ## Run the project
 

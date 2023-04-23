@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Box, Flex, Button, useBreakpointValue, Spinner, Image, Card, CardHeader, CardBody, CardFooter, Stack, Heading, Text, FormControl, FormLabel, Input, Table, Thead, Tr, Th, Tbody, Td, useToast } from "@chakra-ui/react";
+import { Search2Icon } from '@chakra-ui/icons'
 import axios from "axios";
 
 const UserDetails = () => {
@@ -86,7 +87,7 @@ const UserDetails = () => {
       <Box maxW={1000} w="100%" h="90vh" py={10} px={2}>
         <Box maxW={1000} w="100%" h="90vh" py={10} px={2}>
 
-          <Box maxW={1000} w="20%" px={2}>
+          <Box maxW={1000} w={isMobile ? "50%" : "30%"} px={2}>
 
             <Box as="form" my={4}>
               <FormControl id="username">
@@ -101,7 +102,7 @@ const UserDetails = () => {
               </FormControl>
 
               {loading ? <Spinner /> : <Button type="submit" onClick={handleSubmit} colorScheme="blue" mt={4}>
-                Search
+                Search <Search2Icon marginLeft="5px"/>
               </Button>}
 
             </Box>
