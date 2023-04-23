@@ -85,29 +85,34 @@ const UserDetails = () => {
     >
 
       <Box maxW={1000} w="100%" h="90vh" py={10} px={2}>
+
         <Box maxW={1000} w="100%" h="90vh" py={10} px={2}>
 
-          <Box maxW={1000} w={isMobile ? "50%" : "30%"} px={2}>
+          <Flex align="center" justify='center' fontSize="20px">
 
-            <Box as="form" my={4}>
-              <FormControl id="username">
-                <FormLabel>Username:</FormLabel>
-                <Input
-                  type="text"
-                  value={username}
-                  maxLength={39}
-                  placeholder="Enter a username"
-                  onChange={(e) => setUsername(e.target.value.toLowerCase())}
-                />
-              </FormControl>
+            <Box maxW={1000} w={isMobile ? "50%" : "30%"} px={2}>
 
-              {loading ? <Spinner /> : <Button type="submit" onClick={handleSubmit} isDisabled={username === ""} colorScheme="blue" mt={4}>
-                Search <Search2Icon marginLeft="5px"/>
-              </Button>}
+              <Box as="form" my={4}>
+                <FormControl id="username">
+                  <FormLabel>Username:</FormLabel>
+                  <Input
+                    type="text"
+                    value={username}
+                    maxLength={39}
+                    placeholder="Enter a username"
+                    onChange={(e) => setUsername(e.target.value.toLowerCase())}
+                  />
+                </FormControl>
+
+                {loading ? <Spinner /> : <Button type="submit" onClick={handleSubmit} isDisabled={username === ""} colorScheme="blue" mt={4}>
+                  Search <Search2Icon marginLeft="5px" />
+                </Button>}
+
+              </Box>
 
             </Box>
 
-          </Box>
+          </Flex>
 
           {user.length < 1 ? "" : <Card
             direction={{ base: 'column', sm: 'row' }}

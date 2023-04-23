@@ -82,29 +82,33 @@ const Users = () => {
     >
 
       <Box maxW={1000} w="100%" h="90vh" py={10} px={2}>
+        
         <Box maxW={1000} w="100%" h="90vh" py={10} px={2}>
 
-          <Box maxW={1000} w={isMobile ? "50%" : "30%"} px={2}>
+          <Flex align="center" justify='center' fontSize="20px">
 
-            <Box as="form" my={4}>
-              <FormControl id="since">
-                <FormLabel>Since:</FormLabel>
-                <Input
-                  type="number"
-                  value={since}
-                  placeholder="Enter a number"
-                  onChange={(e) => setSince(e.target.value)}
-                />
-              </FormControl>
+            <Box maxW={1000} w={isMobile ? "50%" : "30%"} px={2}>
 
-              {loading ? <Spinner /> : <Button type="submit" onClick={handleSubmit} colorScheme="blue" mt={4} isDisabled={since === ""}>
-                Search <Search2Icon marginLeft="5px" />
-              </Button>}
+              <Box as="form" my={4}>
+                <FormControl id="since">
+                  <FormLabel>Since:</FormLabel>
+                  <Input
+                    type="number"
+                    value={since}
+                    placeholder="Enter a number"
+                    onChange={(e) => setSince(e.target.value)}
+                  />
+                </FormControl>
+
+                {loading ? <Spinner /> : <Button type="submit" onClick={handleSubmit} colorScheme="blue" mt={4} isDisabled={since === ""}>
+                  Search <Search2Icon marginLeft="5px" />
+                </Button>}
+
+              </Box>
 
             </Box>
 
-          </Box>
-
+          </Flex>
 
           {user.length < 1 ? "" :
 
