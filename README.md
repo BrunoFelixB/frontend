@@ -8,7 +8,7 @@ On the `Find a User` screen, you can search for users by username and find more 
 
 ## Run the project
 
-Project Clone git clone: `https://github.com/BrunoFelixB/dashbaoard-admin-react.git`
+Project Clone git clone: `https://github.com/BrunoFelixB/frontend-test.git`
 
 install the dependencies using:`yarn`
 
